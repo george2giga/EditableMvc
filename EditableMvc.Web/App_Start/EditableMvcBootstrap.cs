@@ -6,20 +6,23 @@ using EditableMvc.Web.EditableMvc;
 
 namespace EditableMvc.Web
 {
-    public static class EditableMvcBootstrap
+public static class EditableMvcBootstrap
+{
+    public static void Start()
     {
-        public static void Start()
+        //Register a custom repository by implementing IEditableRepository 
+        EditableMvcConfig.RegisterRepository = () => new SimpleFileRepository("~/App_Data");
+
+        //Register the authorization method used to enable/disable editing on the html element
+        EditableMvcConfig.RegisterAuthorization = () =>
         {
-            EditableMvcConfig.RegisterRepository = () => new SimpleFileRepository("~/App_Data");
-            EditableMvcConfig.RegisterAuthorization = () =>
+            var editable = !string.IsNullOrEmpty(HttpContext.Current.Request.QueryString["editablemvc"]);
+            if (editable)
             {
-                var editable = !string.IsNullOrEmpty(HttpContext.Current.Request.QueryString["editablemvc"]);
-                if (editable)
-                {
-                    return Convert.ToBoolean(HttpContext.Current.Request.QueryString["editablemvc"]);
-                }
-                return false;
-            };
-        }
+                return Convert.ToBoolean(HttpContext.Current.Request.QueryString["editablemvc"]);
+            }
+            return false;
+        };
     }
+}
 }
