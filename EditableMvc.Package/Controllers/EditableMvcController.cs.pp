@@ -28,7 +28,7 @@ namespace $rootnamespace$.Controllers
         {
             var success = false;
 
-            if (EditableMvcConfig.IsAuthorized())
+            if (Request.IsAjaxRequest())
             {
                 //update the modified date
                 model.ModifiedDate = DateTime.Now;

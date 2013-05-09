@@ -4,8 +4,7 @@ var updateUrl = "/editablemvc/update";
 
 function callbackUpdateContent(success, id) {
     id = "#" + id;
-    var bgcol = $(id).css('backgroundColor');
-    if(success == true) {
+    if (success == true) {
         $(id).animate({  opacity: '0.0' }, "slow");
         $(id).animate({  opacity: '0.4' }, "slow");
         $(id).animate({  opacity: '0.8' }, "slow");

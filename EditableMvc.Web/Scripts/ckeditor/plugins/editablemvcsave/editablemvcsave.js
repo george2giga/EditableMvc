@@ -13,7 +13,7 @@ CKEDITOR.plugins.add('editablemvcsave', {
                 $.post(updateUrl, values, function (data)
                 {
                     // add something if you like;
-                    callbackUpdateContent(data.success, editor.name);
+                    callbackUpdateContent(data, editor.name);
                 });
             }
         });

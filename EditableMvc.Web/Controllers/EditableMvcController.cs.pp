@@ -24,11 +24,17 @@ namespace $rootnamespace$.Controllers
         [HttpPost]
         public ActionResult Update(EditableContent model)
         {
-            //update the modified date
-            model.ModifiedDate = DateTime.Now;
-            _repository.Save(model);
+            var success = false;
 
-            return Json(new { success = true });
+            if (Request.IsAjaxRequest())
+            {
+                //update the modified date
+                model.ModifiedDate = DateTime.Now;
+                _repository.Save(model);
+                success = true;
+            }
+
+            return Json(success);
         }
 
     }
