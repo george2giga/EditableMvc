@@ -37,6 +37,16 @@ public static class EditableMvcBootstrap
             return false;
         };
     }
+    
+    //After App_Start is executed register the bundles
+    public static void PostStart()
+    {
+        BundleTable.Bundles.Add(new ScriptBundle("~/bundles/editableMvc").Include(
+        "~/Scripts/jquery-ui-{version}.js",
+        "~/Scripts/ckeditor/ckeditor.js",
+        "~/Scripts/ckeditor/plugins/editablemvcsave/editablemvcsave.js",
+        "~/Scripts/editablemvc.js"));
+    }
 }
 ```
 
