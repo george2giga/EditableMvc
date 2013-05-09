@@ -8,10 +8,10 @@ namespace EditableMvc.Web.EditableMvc
     public static class EditableMvcConfig
     {
 
-        /// <summary>
-        /// Globally enable/disable the edit functionality for the helper. To override it register a custom function for RegisterAuthorization
-        /// </summary>
-        public static bool AuthorizeAll { get; set; }
+        ///// <summary>
+        ///// Globally enable/disable the edit functionality for the helper. To override it register a custom function for RegisterAuthorization
+        ///// </summary>
+        //public static bool AuthorizeAll { get; set; }
 
 
         /// <summary>
@@ -32,8 +32,8 @@ namespace EditableMvc.Web.EditableMvc
         public static bool IsAuthorized()
         {
             if (RegisterAuthorization == null)
-                return AuthorizeAll;
-            
+                return false;
+
             return RegisterAuthorization();
         }
 
