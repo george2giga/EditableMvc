@@ -1,4 +1,4 @@
-![ScreenShot](https://raw.github.com/george2giga/EditableMvc/master/ReadmeResources/editablemvclogosmall.PNG)
+EditableMvc
 ===========
 The package provides persistent inline page editing using [CKEditor](http://ckeditor.com/).
 
