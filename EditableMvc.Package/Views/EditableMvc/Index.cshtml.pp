@@ -1,4 +1,4 @@
-@using $rootnamespace$
+@using $rootnamespace$.EditableMvc
 @{
     ViewBag.Title = "title";
     Layout = "~/Views/Shared/_EditableMvcLayout.cshtml"; ;
