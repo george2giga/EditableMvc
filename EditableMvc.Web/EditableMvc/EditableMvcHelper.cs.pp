@@ -4,7 +4,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using EditableMvc.Web.EditableMvc;
 
-namespace $rootnamespace$
+namespace $rootnamespace$.EditableMvc
 {
     /// <summary>
     /// Extension providing the EditableMvc html helper

@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditableMvc.Web", "Editable
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NugetPackage", "NugetPackage", "{DA519DD5-AEA7-41E6-9B43-9A50928AAF61}"
 	ProjectSection(SolutionItems) = preProject
-		NugetPackage\EditableMvc.1.0.0.nupkg = NugetPackage\EditableMvc.1.0.0.nupkg
+		NugetPackage\EditableMvc.1.0.1.nupkg = NugetPackage\EditableMvc.1.0.1.nupkg
 		NugetPackage\logo.png = NugetPackage\logo.png
 	EndProjectSection
 EndProject
