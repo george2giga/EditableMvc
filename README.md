@@ -3,12 +3,16 @@ EditableMvc
 The package provides persistent inline page editing using [CKEditor](http://ckeditor.com/).
 
 ###How it works:
-The EditableMvc helper will render the specified selected html element and enable the inline editing functionality
+The <strong>EditableMvc</strong> helper will render the specified selected html element and enable the inline editing functionality
 of CKEditor. Once edited, the content is posted via ajax to a controller action and the data get saved through a
 repository layer, which can be easily swapped (default storage is xml serialization on filesystem).
 
 ###Setup:
-The default configuration deployed with the package enable the edit functionality when editablemvc=true is present 
+Firstly download the package using [NuGet](http://docs.nuget.org/docs/start-here/installing-nuget)
+
+    PM> Install-Package EditableMvc
+    
+The default configuration deployed with the package enable the edit functionality when <strong>editablemvc=true</strong> is present 
 in the querystring and setup the repository to use files. 
 
 ```C#
