@@ -3,8 +3,8 @@ using System.Web;
 using System.Web.Optimization;
 using EditableMvc.Web.EditableMvc;
 
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(EditableMvc.Web.EditableMvcBootstrap), "Start")]
-[assembly: WebActivatorEx.PostApplicationStartMethod(typeof(EditableMvc.Web.EditableMvcBootstrap), "PostStart")]
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof($rootnamespace$.EditableMvcBootstrap), "Start")]
+[assembly: WebActivatorEx.PostApplicationStartMethod(typeof($rootnamespace$.EditableMvcBootstrap), "PostStart")]
 
 namespace $rootnamespace$
 {
