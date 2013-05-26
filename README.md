@@ -2,6 +2,8 @@ EditableMvc
 ===========
 The package provides persistent inline page editing using [CKEditor](http://ckeditor.com/).
 
+For a quick overview of the library installation and use check the [youtube video](http://youtu.be/wFj9-j8RF1c).
+
 ###How it works:
 The <strong>EditableMvc</strong> helper will render the specified selected html element and enable the inline editing functionality
 of CKEditor. Once edited, the content is posted via ajax to a controller action and the data get saved through a
@@ -35,6 +37,16 @@ public static class EditableMvcBootstrap
             return false;
         };
     }
+    
+    //After App_Start is executed register the bundles
+    public static void PostStart()
+    {
+        BundleTable.Bundles.Add(new ScriptBundle("~/bundles/editableMvc").Include(
+        "~/Scripts/jquery-ui-{version}.js",
+        "~/Scripts/ckeditor/ckeditor.js",
+        "~/Scripts/ckeditor/plugins/editablemvcsave/editablemvcsave.js",
+        "~/Scripts/editablemvc.js"));
+    }
 }
 ```
 
@@ -42,9 +54,7 @@ public static class EditableMvcBootstrap
 Ensure all the required js (and optional style) are registered
 
 ```C#
-@Scripts.Render("~/Scripts/ckeditor/ckeditor.js")
-@Scripts.Render("~/Scripts/ckeditor/plugins/editablemvcsave/editablemvcsave.js")
-@Scripts.Render("~/Scripts/editablemvc.js")
+@Scripts.Render("~/bundles/editablemvc")
 @Styles.Render("~/Content/editablemvcstyle.css")
 ```
 
